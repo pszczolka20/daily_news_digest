@@ -1,10 +1,14 @@
 import requests
 from send_email import send_email
+from datetime import date
+
+# Returns the current local date
+today = date.today()
 
 topic = "tesla"
 api_key = "f5565672f45941549e0815284bb43c9b"
 url = f"https://newsapi.org/v2/everything?q={topic}&" \
-      "from=2023-08-05&sortBy=publishedAt&apiKey=" \
+      "from={today}&sortBy=publishedAt&apiKey=" \
       "f5565672f45941549e0815284bb43c9b&language=en"
 
 # Make a request

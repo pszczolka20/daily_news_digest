@@ -1,10 +1,11 @@
 import smtplib, ssl
+import os
 def send_email(message):
     host = "smtp.gmail.com"
     port = 465
 
     username = "apasieka.business@gmail.com"
-    password = "snhxmdyimqjwaivq"
+    password = os.getenv("PASSWORD")
 
     receiver = "apasieka.business@gmail.com"
     context = ssl.create_default_context()
